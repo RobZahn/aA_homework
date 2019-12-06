@@ -46,7 +46,33 @@
         <li>Saut&eacute 3 minutes on each side over medium heat. You may need to adjust your heat settings (not all ranges are created equal), but they do need about 3 minutes per side to cook through. Place them between paper towels when done.</li>
         <li>They can get a little juicy inside so be careful that you don't get a lap-full of juice when taking a bite.</li>
     </ol>
-    <section></section>
+    <section>
+        <h2>Reviews</h2>
+        <form action="/reviews" method="post">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+            <label for="rating">Rating</label>
+            1<input type="radio" name="rating" value="1" checked>
+            2<input type="radio" name="rating" value="2">
+            3<input type="radio" name="rating" value="3">
+            4<input type="radio" name="rating" value="4">
+            5<input type="radio" name="rating" value="5">
+            <label for="expertise">Cooking Expertise</label>
+            <select id="expertise" name="expertise">
+                <option value="Select Cooking Expertise" disable="true"
+                selected="true">Select Cooking Expertise</option>
+                <option value="Sometimes Cook">Sometimes Cook</option>
+                <option value="Cook Everyday">Cook Everyday</option>
+                <option value="Cooking is a Hobby">Cooking is a Hobby</option>
+                <option value="Professional Chef">Professional Chef</option>
+                </select>
+            <label>
+                "Review"
+                <textarea name="review" cols="30" rows="10"></textarea>
+            </label>
+            <input type="submit" value="Submit Review"
+        </form>
+    </section>
     <footer><p><a href="https://natashaskitchen.com/lenas-chebureki-recipe-%D1%87%D0%B5%D0%B1%D1%83%D1%80%D0%B5%D0%BA%D0%B8/">Original Recipe</a></p></footer>
 </body>
 </html>
