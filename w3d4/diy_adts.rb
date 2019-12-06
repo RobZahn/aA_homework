@@ -33,3 +33,24 @@ class Queue
         @queue.last
     end
 end
+
+class Map
+    def initialize
+        @map = []
+    end
+
+    def set(key, val)
+        @map << [key, val]
+    end
+
+    def get(key)
+        @map.each {|pair| return pair[0] if pair[0] == key}
+    end
+
+    def delete(key)
+        @map.each {|pair| pair.delete(key) if pair[0] == key}
+    end
+end
+
+
+
