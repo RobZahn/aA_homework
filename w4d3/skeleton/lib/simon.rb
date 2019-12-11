@@ -1,41 +1,63 @@
 class Simon
-  COLORS = %w(red blue green yellow)
+    COLORS = %w(red blue green yellow)
 
-  attr_accessor :sequence_length, :game_over, :seq
+    attr_accessor :sequence_length, :game_over, :seq
 
-  def initialize
+    def initialize
+        @sequence_length = 1
+        @game_over = false
+        @seq = []
+    end
+    
+    def add_random_color
+        seq << COLORS.sample
+    end
+    
+    def take_turn
+        self.show_sequence
+        self.require_sequence
 
-  end
+        unless game_over
+            self.round_success_message
+            @sequence_length += 1
+        end
 
-  def play
+    end
 
-  end
+    def play
+        until game_over
+            self.take_turn
+        end
 
-  def take_turn
+        if game_over
+            self.game_over_message
+            self.reset_game
+        end
+    end
 
-  end
 
-  def show_sequence
+    def show_sequence
+        add_random_color
+    end
 
-  end
+    def require_sequence
+        puts "Repeat after me:"
+        user_seq = gets.chomp
+        #@game_over = true unless each consecutive color of user_seq matches seq
+    end
 
-  def require_sequence
 
-  end
+    def round_success_message
+        puts "Correct"
+    end
 
-  def add_random_color
+    def game_over_message
+        puts "Game Over!"
+    end
 
-  end
-
-  def round_success_message
-
-  end
-
-  def game_over_message
-
-  end
-
-  def reset_game
-
-  end
+    def reset_game
+        @sequence_length = 1
+        @game_over = false
+        @seq = []
+    end
 end
